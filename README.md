@@ -28,7 +28,7 @@ To run the tests locally you will need to run a local private testnet.
 2) `cd` to the project's directory and start it with:
 
 ```
-geth --rpc --nodiscover --maxpeers 0 --datadir "t/" init t/CustomGenesis.json
+geth --rpc --nodiscover --maxpeers 0 --datadir "t/client-data" init t/CustomGenesis.json
 geth --nodiscover --maxpeers 0 --rpc --datadir t/client-data --networkid 555 --unlock "0,1" --password t/password.txt console
 ```
 
@@ -40,6 +40,7 @@ geth --nodiscover --maxpeers 0 --rpc --datadir t/client-data --networkid 555 --u
 - `--password` will use the password provided in the text file
 - `console` will open the console
 
+3) In the step2 opend console, run `miner.start()` to mine some blocks. After a while, execute `miner.stop()` to stop mining.
 4) Run `(asdf:test-system :ethi)` inside your repl. I am assuming you cloned the project in a directory that `asdf` can see.
 
 See the [official instructions](http://ethdocs.org/en/latest/network/test-networks.html#setting-up-a-local-private-testnet) for further reading on how to setup a local private testnet.
