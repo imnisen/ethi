@@ -121,6 +121,7 @@ you will not need to change this values.")
   "Generic http post request with raw body"
   (drakma:http-request uri
                        :method :post
+                       :content-type "application/json"
                        :content raw-body))
 
 (defun api-call (method params)
